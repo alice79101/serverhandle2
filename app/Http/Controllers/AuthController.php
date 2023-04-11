@@ -17,9 +17,11 @@ class AuthController extends Controller
         $token = Auth::guard('api')->attempt($credential);
         abort_if( !$token, Response::HTTP_BAD_REQUEST, __('auth.loginFail'));
 
-        return \response([
-            'message' => 'login successful',
-            'data' => $token,
-        ]);
+//        return \response([
+//            'message' => 'login successful',
+//            'data' => $token,
+//        ]);
+        return view('welcome');
+//        return redirect('/dashboard');
     }
 }
