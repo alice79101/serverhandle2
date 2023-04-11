@@ -18,7 +18,7 @@ class RegisterController extends Controller
         abort_if(
             User::where('email', $request->input('email'))->first(),
             Response::HTTP_BAD_REQUEST,
-            __("此 email 已經註冊過囉！")
+            __("auth.alreadyRegister")
         );
 
         $user = User::create(
